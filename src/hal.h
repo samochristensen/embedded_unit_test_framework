@@ -5,7 +5,7 @@
 
 /* pointer to hal functions */
 typedef float (*fp_ReadADC_Volts)(int adc_index, int adc_channel);
-typedef float (*fp_ADC_VoltsToTemp)(float value);
+typedef float (*fp_ADC_VoltsToTemp)(float voltage);
 
 /* object to store function pointers */
 struct HAL_FunctionPointers {

@@ -12,8 +12,10 @@ file(GLOB SOURCES "src/*.c")
 # Include the src directory for header files
 include_directories(src)
 
+add_subdirectory(unity)
+
 # Add executable based on the automatically collected source files
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 # If you have any libraries to link, use this
-# target_link_libraries(${PROJECT_NAME} your_library)
+target_link_libraries(${PROJECT_NAME} PRIVATE unity::framework)
