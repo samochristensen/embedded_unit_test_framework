@@ -1,4 +1,4 @@
-#include "mock.h"
+#include "mocks.h"
 /* 
 * this file contains the alternative function implementations
 * for testing the logic - may include the following doubles:

@@ -13,6 +13,7 @@ file(GLOB SOURCES "src/*.c")
 include_directories(src)
 
 add_subdirectory(unity)
+add_subdirectory(tests)
 
 # Add executable based on the automatically collected source files
 add_executable(${PROJECT_NAME} ${SOURCES})

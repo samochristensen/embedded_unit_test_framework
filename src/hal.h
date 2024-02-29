@@ -14,8 +14,9 @@ struct HAL_FunctionPointers {
 };
 
 /* setters for hal functions */
-void set_read_adc_volts_ptr(fp_ReadADC_Volts newFunc);
-void set_adc_volts_to_temp(fp_ADC_VoltsToTemp newFunc);
+void set_fp_read_adc_volts(fp_ReadADC_Volts newFunc);
+void set_fp_adc_volts_to_temp(fp_ADC_VoltsToTemp newFunc);
+void set_fp_default_all(void);
 
 /* default hal function declaration */
 float read_adc_volts(int adc_index, int adc_channel);
