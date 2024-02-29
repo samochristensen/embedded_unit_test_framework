@@ -1,0 +1,96 @@
+# C-specific #
+###############
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared libraries (including Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# CMake-specific #
+###################
+# CMake build directory
+build/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.make
+*.cmake
+
+# Include what you want to ignore in the build
+*.sdf
+*.opensdf
+*.user
+*.userprefs
+*.log
+*.tlog
+*.suo
+
+# Docker-specific #
+####################
+# General
+*.log
+*.tar
+*.pid
+*.tar.gz
+
+# Docker build files
+.dockerignore
+*.dockerfile
+**/Dockerfile
+docker-compose*.yml
+!**/Dockerfile*
+
+# Docker volumes and temporary files
+.docker/
+.dockerenv
+**/.dockerenv
+**/.env
+
+# Visual Studio Code-specific #
+################################
+.vscode/
+
+# Add other files and directories you want to ignore.
+# Example: editor backups, temporary files, etc.
+*~
+.DS_Store
+Thumbs.db
