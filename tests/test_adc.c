@@ -16,12 +16,11 @@ void setUp(void) {
 
 // Global teardown function (runs after each test)
 void tearDown(void) {
-    set_fp_default_all();
 }
 
 void test_ReadAdcVolts(void) {
-    float adc_voltage = halFuncs.read_adc_volts(ADC_INDEX, ADC_CHANNEL);
-    float temperature = halFuncs.adc_volts_to_temp(adc_voltage);
+    float adc_voltage = halFuncs.fp_read_adc_volts(ADC_INDEX, ADC_CHANNEL);
+    float temperature = halFuncs.fp_adc_volts_to_temp(adc_voltage);
 
     float delta = 1.0;
     float expected_voltage = 1; // Assuming these are the expected values

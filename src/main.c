@@ -13,13 +13,16 @@
 extern struct HAL_FunctionPointers halFuncs; // defined in hal.c 
 
 int main(void){
-    if (!halFuncs.read_adc_volts || !halFuncs.adc_volts_to_temp) {
+    set_halFuncs_default();
+
+    if (!halFuncs.fp_read_adc_volts || !halFuncs.fp_adc_volts_to_temp) {
         // Handle error: Function pointers are not initialized
-        printf("error, functions not initialized");
+        printf("error, functions not initialized\n");
         return -1;
     }
-    float adc_voltage = halFuncs.read_adc_volts(ADC_INDEX, ADC_CHANNEL);
-    float temperature = halFuncs.adc_volts_to_temp(adc_voltage);
+
+    float adc_voltage = halFuncs.fp_read_adc_volts(ADC_INDEX, ADC_CHANNEL);
+    float temperature = halFuncs.fp_adc_volts_to_temp(adc_voltage);
 
     printf("ADC volts: %f\n", adc_voltage);
     printf("ADC temps: %f\n", temperature);

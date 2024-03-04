@@ -5,6 +5,8 @@
 * dummy, fake, stub, spy, mock
 */
 
+extern struct HAL_FunctionPointers halFuncs;
+
 /* unit testing function implementation */
 float read_adc_volts_mock(int adc_index, int adc_channel){
     /* TODO: implement test case for unit test */
