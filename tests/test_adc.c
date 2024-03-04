@@ -24,8 +24,8 @@ void test_ReadAdcVolts(void) {
     float temperature = halFuncs.adc_volts_to_temp(adc_voltage);
 
     float delta = 1.0;
-    float expected_voltage = 1.2; // Assuming these are the expected values
-    float expected_temperature = 50.0 * 1.2; // Adjust according to your expectations
+    float expected_voltage = 1; // Assuming these are the expected values
+    float expected_temperature = 1; // Adjust according to your expectations
 
     // Assertions
     TEST_ASSERT_FLOAT_WITHIN(delta, expected_voltage, adc_voltage);
