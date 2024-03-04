@@ -10,23 +10,20 @@
 
 /* object to store function pointers */
 struct HAL_FunctionPointers halFuncs = {
-    .read_adc_volts = read_adc_volts,
-    .adc_volts_to_temp = adc_volts_to_temp
+    .fp_read_adc_volts = NULL,
+    .fp_adc_volts_to_temp = NULL
 };
 
-/* default function implementation */
-float read_adc_volts(int adc_index, int adc_channel){
-    return -1;
-}
-
-float adc_volts_to_temp(float voltage){
-    return -1;
+void set_halFuncs_default(){
+    halFuncs.fp_adc_volts_to_temp = adc_volts_to_temp; // from driver.h
+    halFuncs.fp_read_adc_volts = read_adc_volts; // from driver.h
 }
 
 /* setters for hal function pointers (for unit testing) */
 void set_fp_read_adc_volts(fp_ReadADC_Volts newFunc){
-    halFuncs.read_adc_volts = newFunc;
+    halFuncs.fp_read_adc_volts = newFunc;
 }
+
 void set_fp_adc_volts_to_temp(fp_ADC_VoltsToTemp newFunc){
-    halFuncs.adc_volts_to_temp = newFunc;
+    halFuncs.fp_adc_volts_to_temp = newFunc;
 }
